@@ -1,26 +1,56 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails Assessment
+mtg-card-trade
 
-Things you may want to cover:
+# CONTRIBUTORS
+Mark and Sam
 
-* Ruby version
-  2.6.3
-  Hello
+https://mtg-card-trades.herokuapp.com/
 
-* System dependencies
+Issue the app tries to solve
 
-* Configuration
+Network Infrastructure:
 
-* Database creation
+# THIRD PART SERVICES
+Devise
+Cloudinary
+Stripe
+Bulma
 
-* Database initialization
+# DATABASING
+Describe database structure (Pros & Cons)
+Describe database setup (Production)
 
-* How to run the test suite
+# ARCHITECTURE AND HIGH LEVEL DESIGN
+Application architecture
+High level components
 
-* Services (job queues, cache servers, search engines, etc.)
+Data structure of similar app/site
 
-* Deployment instructions
+User Stories
+Wireframe
 
-* ...
+Planning and Tracking
+
+Agile methodology implementation
+
+src control process
+testing
+
+# INFO SEC AND USER DATA
+Discuss and analyse info sec
+discuss info sec methods
+research legality
+
+# DATABASE DESIGN
+Database infrastructure
+Schema design
+ERD
+Tracked Entities
+Database relations
+Entity relationships/associations
+Model relationships
+
+# DATABASE IMPLEMENTATION
+Identify appropriate model methods
