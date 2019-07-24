@@ -1,2 +1,9 @@
-<h1>Sellers#index</h1>
-<p>Find me in app/views/sellers/index.html.erb</p>
+<%= form_with model: @seller do |form| %>
+  <p class = "has-text-centered is-family-monospace is-size-3">
+    <%= form.check_box :user_id %>
+    <%= label :user_id, "Willing to be a seller"%>
+  <p>
+  <p class = "has-text-centered is-family-monospace is-size-3">
+    <%= form.submit 'Submit' %>
+  </p>
+<% end %>
