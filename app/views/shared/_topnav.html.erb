@@ -7,7 +7,7 @@
         </div>
           <div class = "level-right">
             <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Home', root_path %></p>
-            <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Register as a seller', sellers_index_path %></p>
+            <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Register as a seller', edit_trades_path(user_id:current_user.id) %></p>
             <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Logout', destroy_user_session_path, method: "delete"%></p>
           </div>
         </div>
