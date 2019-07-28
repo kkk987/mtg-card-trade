@@ -1,0 +1,9 @@
+<%= form_with model: @seller, url: trades_path do |form| %>
+  <p class = "has-text-centered is-family-monospace is-size-3">
+    <%= form.check_box :registered %>
+    <%= label :registered, "Willing to be a seller"%>
+  <p>
+  <p class = "has-text-centered is-family-monospace is-size-3">
+    <%= form.submit 'Submit' %>
+  </p>
+<% end %>

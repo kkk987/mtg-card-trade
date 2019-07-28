@@ -3,8 +3,22 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  after_initialize :init
+
+  # Set the default seller registration to false
+  def init
+    self.registered ||= false
+  end
 
   def name
     return username ? username : email
+  end
+
+  def self.register_seller(current_user, registered)
+    if !current_user.id.nil? && !registered.nil?
+      # byebug
+      current_user.registered = !registered.zero?
+      return current_user.save
+    end
   end
 end

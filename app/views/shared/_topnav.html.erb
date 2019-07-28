@@ -6,6 +6,12 @@
           <p class = "level-item has-text-white is-family-monospace is-capitalized"><%= current_user.name %></p>
         </div>
           <div class = "level-right">
+            <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Home', root_path %></p>
+            <% if current_user.registered == true %>
+              <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Unregister as a seller', edit_trades_path(user_id:current_user.id) %></p>
+            <% else %>
+              <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Register as a seller', edit_trades_path(user_id:current_user.id) %></p>
+            <% end %>
             <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Logout', destroy_user_session_path, method: "delete"%></p>
           </div>
         </div>
