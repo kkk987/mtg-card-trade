@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_042043) do
     t.datetime "updated_at", null: false
     t.bigint "seller_id"
     t.index ["seller_id"], name: "index_stocks_on_seller_id"
-  end
+  end 
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
