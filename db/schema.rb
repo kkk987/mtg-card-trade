@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 2019_07_29_042043) do
     t.bigint "seller_id"
     t.index ["seller_id"], name: "index_stocks_on_seller_id"
   end 
+  create_table "cards", force: :cascade do |t|
+    t.string "title"
+    t.string "card_type"
+    t.string "color"
+    t.string "rarity"
+    t.integer "converted_mana_cost"
+    t.string "set"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
