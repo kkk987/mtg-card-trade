@@ -1,1 +1,75 @@
-<h1>Hello Traders</h1>
+  <h1 class = "title is-size-1-desktop is-size-3-tablet is-size-5-mobile has-text-centered">Hello Traders</h1>
+
+<%=form_with model: @cards do |f| %>
+  <%= f.text_area :comments, class: "input is-rounded is-medium", type: "text", placeholder: "Card title" %>
+  <div class = "buttons is-centered" >
+    <%= f.submit "Apply filter" , class: "button is-rounded" %>
+  </div>
+  <% types = ['Artifacts', 'Creatures', 'Enchantments', 'Instants', 'Lands', 'Planeswalkers', 'Sorceries', 'Tribals', 'Planes', 'Phenomena', 'Vanguards', 'Schemes', 'Conspiracies' ] %>
+  <% colors = ['Red', 'Blue', 'White', 'Black', 'Green', 'Colorless'] %>
+  <% rarities = ['Common', 'Uncommon', 'Rare', 'Mythic rare'] %>
+  <% mana_costs = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '12+'] %>
+  <% sets = ['Core Set 2020', 'War of the spark', 'Modern Horizons', 'Ravnica Allegiance'] %>
+  <% release_dates = *(1993..2019) %>
+  <table>
+    <tr>
+      <td><%= label :types, "Type:" %></td>
+      <td>
+        <%= f.select :types,
+                     types,
+                     { prompt: 'Plase select'},
+                     { multiple: true }
+        %>
+      </td>
+    <tr>
+    <tr>
+      <td><p>Color: </p></td>
+      <td>
+        <% colors.each do |color| %>
+          <%= label :colors, color %>
+          <%= f.check_box :colors, { multiple: true }, color, false %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td><p>Rarities: </p></td>
+      <td>
+        <% rarities.each do |ratity| %>
+          <%= label :rarities, ratity %>
+          <%= f.check_box :rarities, { multiple: true }, ratity, false %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td><%= label :mana_costs, "Mana costs:" %>
+</td>
+      <td>
+        <%= f.select :mana_costs,
+                     mana_costs,
+                     { prompt: 'Plase select'},
+                     { multiple: true }
+        %>
+      </td>
+    </tr>
+    <tr>
+      <td><p>Set: </p></td>
+      <td>
+        <%= f.select :sets,
+                     sets,
+                     { prompt: 'Plase select'},
+                     { multiple: true }
+        %>
+      </td>
+    </tr>
+    <tr>
+      <td><p>Ralease date: </p></td>
+      <td>
+        <%= f.select :release_dates,
+                     release_dates,
+                     { prompt: 'Plase select'},
+                     { multiple: true }
+        %>
+      </td>
+    </tr>
+  </table>
+<% end %>
