@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card_id: one
+  seller_id: one
+  quantity: 1
+  price: 9.99
+  condition: MyString
+
+two:
+  card_id: two
+  seller_id: two
+  quantity: 1
+  price: 9.99
+  condition: MyString
