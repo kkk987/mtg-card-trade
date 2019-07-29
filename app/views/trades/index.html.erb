@@ -41,14 +41,19 @@
       </td>
     </tr>
     <tr>
-      <td><%= label :mana_costs, "Mana costs:" %>
-</td>
+      <td><%= label :mana_costs, "Mana costs:" %></td>
       <td>
         <%= f.select :mana_costs,
                      mana_costs,
                      { prompt: 'Plase select'},
                      { multiple: true }
         %>
+      <td><p>Mana Cost: </p></td>
+      <td>
+        <% mana_costs.each do |cost| %>
+          <%= label :mana_costs, cost %>
+          <%= f.check_box :mana_costs, { multiple: true }, cost, false %>
+        <% end %>
       </td>
     </tr>
     <tr>
@@ -59,6 +64,7 @@
                      { prompt: 'Plase select'},
                      { multiple: true }
         %>
+
       </td>
     </tr>
     <tr>
