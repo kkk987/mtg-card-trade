@@ -1,3 +1,9 @@
-<h1>Cards#index</h1>
-Card List
-<p>Find me in app/views/cards/index.html.erb</p>
+<h1 class="has-text-grey-dark title is-size-1-desktop is-size-3-tablet is-size-5-mobile">Cards</h1>
+
+<% if @cards %>
+<% @cards.each do |card| %>
+    <section class="list-item">
+        <%=render "shared/card_item", card: card%>
+    </section>
+<%end%>
+<%end%>
