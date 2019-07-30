@@ -10,20 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_29_042043) do
+ActiveRecord::Schema.define(version: 2019_07_29_045615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "stocks", force: :cascade do |t|
-    t.integer "quantity"
-    t.decimal "price", precision: 10, scale: 2
-    t.string "condition"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "seller_id"
-    t.index ["seller_id"], name: "index_stocks_on_seller_id"
-  end 
   create_table "cards", force: :cascade do |t|
     t.string "title"
     t.string "card_type"
@@ -34,6 +25,18 @@ ActiveRecord::Schema.define(version: 2019_07_29_042043) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.integer "quantity"
+    t.decimal "price", precision: 10, scale: 2
+    t.string "condition"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "seller_id"
+    t.bigint "card_id"
+    t.index ["card_id"], name: "index_stocks_on_card_id"
+    t.index ["seller_id"], name: "index_stocks_on_seller_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,5 +53,6 @@ ActiveRecord::Schema.define(version: 2019_07_29_042043) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "stocks", "cards"
   add_foreign_key "stocks", "users", column: "seller_id"
 end

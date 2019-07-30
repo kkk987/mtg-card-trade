@@ -1,0 +1,18 @@
+<h1 class = "title is-1">Add a new stock</h1>
+
+
+<%= form_with model: @stock, local: true do |f| %>
+<div>
+  <%= f.fields_for :title, @card do |card_form| %>
+  <%= card_form.label :title, "Title" %>
+  <%= card_form.text_field :title, id: "card-autocomplete" %>
+  <% end %>
+</div>
+  <div>
+    <%= label(:card_title, 'Card title')%>
+    <%# <% options =  options_from_collection_for_select(@card, 'id', 'title') %>
+    <%# <%= f.select :all_val, options %>
+    <%= f.text_field :title, id: "card-autocomplete" %>
+  </div>
+
+<% end %>
