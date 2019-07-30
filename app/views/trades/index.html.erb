@@ -17,6 +17,7 @@
       <td>
         <%= f.select :types,
                      types,
+                     { prompt: 'Plase select'},
                      { multiple: true }
         %>
       </td>
@@ -40,6 +41,13 @@
       </td>
     </tr>
     <tr>
+      <td><%= label :mana_costs, "Mana costs:" %></td>
+      <td>
+        <%= f.select :mana_costs,
+                     mana_costs,
+                     { prompt: 'Plase select'},
+                     { multiple: true }
+        %>
       <td><p>Mana Cost: </p></td>
       <td>
         <% mana_costs.each do |cost| %>
@@ -51,16 +59,22 @@
     <tr>
       <td><p>Set: </p></td>
       <td>
+        <%= f.select :sets,
+                     sets,
+                     { prompt: 'Plase select'},
+                     { multiple: true }
+        %>
 
       </td>
     </tr>
     <tr>
       <td><p>Ralease date: </p></td>
       <td>
-        <% release_dates.each do |date| %>
-          <%= label :release_dates, date %>
-          <%= f.check_box :release_dates, { multiple: true }, date, false %>
-        <% end %>
+        <%= f.select :release_dates,
+                     release_dates,
+                     { prompt: 'Plase select'},
+                     { multiple: true }
+        %>
       </td>
     </tr>
   </table>
