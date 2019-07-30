@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "trades#index"
   resources :trades, only: [:edit, :update]
-  resources :cards, only: [:index]
+  resources :cards, only: [:index, :show, ]
 end
