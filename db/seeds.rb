@@ -41,8 +41,8 @@ cards = Card.create(
     })
 cards = Card.create(
     {
-        title: 'Nicol Bolas, Dragon,God',
-        card_type: 'Planeswaler',
+        title: 'Nicol Bolas, Dragon-God',
+        card_type: 'Planeswalker',
         color: 'Blue, Black, Red',
         rarity: 'Mythic Rare',
         converted_mana_cost: 5,
@@ -62,7 +62,7 @@ cards = Card.create(
 cards = Card.create(
     {
         title: 'Smothering Tithe',
-        card_type: 'aEnchantment',
+        card_type: 'Enchantment',
         color: 'White',
         rarity: 'Rare',
         converted_mana_cost: 4,
