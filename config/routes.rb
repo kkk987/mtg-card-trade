@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   root to: "trades#index"
   resources :trades, only: [:edit, :update]
   resources :cards, only: [:index]
-  resources :stocks, only: [:index, :new]
+  resources :stocks, only: [:index, :new, :create]
 end

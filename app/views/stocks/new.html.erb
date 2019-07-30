@@ -14,11 +14,11 @@
   </div>
   <div class = "is-size-3 has-text-centered">
     <%= label(:price, 'Price') %>
-    <%= f.number_field :price, required: true %>
+    <%= f.number_field :price, required: true, class: "input is-rounded search-bar", step: 0.01 %>
   </div>
   <div class = "is-size-3 has-text-centered">
     <%=label(:quantity, 'Quantity')%>
-    <%= f.number_field :quantity, required: true %>
+    <%= f.number_field :quantity, required: true, class: "input is-rounded search-bar" %>
   </div>
   <div class = "has-text-centered">
     <%= f.submit "Submit", class: "button is-rounded" %>
