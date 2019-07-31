@@ -1,4 +1,3 @@
-<p class = "level-item has-text-white is-family-monospace"><%= link_to 'Show all Cards', cards_path %>
  <% if user_signed_in? %>
   <nav class = "container is-fluid">
     <div class = "notification has-background-grey-dark">
@@ -8,6 +7,7 @@
         </div>
           <div class = "level-right">
             <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Home', root_path %></p>
+            <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Show all Cards', cards_path %>
             <% if current_user.registered == true %>
               <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Unregister as a seller', edit_trade_path(id:current_user.id) %></p>
             <% else %>
@@ -26,6 +26,7 @@
       <div class = "level">
         <div class = "level-left"></div>
           <div class = "level-right">
+            <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Show all Cards', cards_path %>
             <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Login', new_user_session_path %></p>
             <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Sign Up', new_user_registration_path %></p>
           </div>
