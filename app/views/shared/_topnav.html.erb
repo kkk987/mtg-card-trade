@@ -24,8 +24,11 @@
   <nav class = "container is-fluid">
     <div class = "notification has-background-grey-dark">
       <div class = "level">
-        <div class = "level-left"></div>
+        <div class = "level-left">
+        <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Home', root_path %></p>
+        </div>
           <div class = "level-right">
+            <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Show all Cards', cards_path %>
             <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Login', new_user_session_path %></p>
             <p class = "level-item has-text-white is-family-monospace"><%= link_to 'Sign Up', new_user_registration_path %></p>
           </div>
