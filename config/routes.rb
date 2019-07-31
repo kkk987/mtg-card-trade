@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   root to: "trades#index"
   resources :trades, only: [:edit, :update]
   resources :cards, only: [:index]
-  resources :stocks, only: [:index, :new, :create]
+  resources :stocks, only: [:index, :new, :create, :edit, :update]
+  delete "stocks/:id", to: "stocks#destroy", as: "delete_stock"
 end

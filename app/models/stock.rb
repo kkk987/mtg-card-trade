@@ -34,4 +34,14 @@ class Stock < ApplicationRecord
       return false
     end
   end
+
+  def self.update_my_stock(stock_id, title, condition, price, quantity)
+    stock = Stock.find(stock_id)
+    return false if !stock
+    stock.card_id = Card.return_card_id(title)
+    stock.condition = condition
+    stock.price = price
+    stock.quantity = quantity
+    return stock
+  end
 end
