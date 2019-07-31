@@ -18,6 +18,7 @@ class StocksController < ApplicationController
     # info = params[:stock]
     card_id = Card.return_card_id(params[:stock][:title][:title])
     stock = Stock.create_stock(card_id, current_user.id, params[:stock][:condition], params[:stock][:price], params[:stock][:quantity])
+    # byebug
     if stock
       flash[:alert] = "Your changes have been saved"
       redirect_to stocks_path

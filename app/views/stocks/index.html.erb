@@ -16,10 +16,12 @@
   <thead>
   <tbody>
     <% @stock.each do |item| %>
-      <th><%= item.card.title.capitalize%></th>
-      <th><%= item.condition.capitalize %></th>
-      <th><%= item.price %></th>
-      <th><%= item.quantity %></th>
+      <tr>
+        <th><%= item.card.title.capitalize%></th>
+        <th><%= item.condition.capitalize %></th>
+        <th><%= item.price %></th>
+        <th><%= item.quantity %></th>
+      </tr>
     <% end %>
   </tbody>
 </table>
