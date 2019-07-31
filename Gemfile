@@ -37,6 +37,8 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
+gem 'cloudinary', require: false
+gem 'activestorage-cloudinary-service'
 
 #Add jquery ui autocomplete gem
 gem 'jquery-ui-rails'
