@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   after_initialize :init
-
+  has_many :stocks, foreign_key: "seller_id", dependent: :destroy
   # Set the default seller registration to false
   def init
     self.registered ||= false

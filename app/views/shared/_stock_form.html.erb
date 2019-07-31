@@ -1,0 +1,24 @@
+<%= form_with model: @stock, local: true do |f| %>
+  <div class = "is-size-3 has-text-centered">
+    <%= f.fields_for :card, @stock.card do |card_form| %>
+    <%= card_form.label :title, "Title" %>
+    <%= card_form.text_field :title, required: true, id: "card-autocomplete", minlength: 1, class: "input is-rounded search-bar" %>
+    <% end %>
+  </div>
+  <div class = "is-size-3 has-text-centered">
+    <%=label(:condition, 'Condition')%>
+    <%= f.select :condition, options_for_select(["Please choose...","Brand new", "Mint", "Lightly played", "Battle scarred", "Defeated"], selected: @stock.condition)%>  
+  </div>
+  <div class = "is-size-3 has-text-centered">
+    <%= label(:price, 'Price') %>
+    <%= f.number_field :price, required: true, class: "input is-rounded search-bar", step: 0.01 %>
+  </div>
+  <div class = "is-size-3 has-text-centered">
+    <%=label(:quantity, 'Quantity')%>
+    <%= f.number_field :quantity, required: true, class: "input is-rounded search-bar" %>
+  </div>
+  <div class = "has-text-centered">
+    <%= f.submit "Submit", class: "button is-rounded" %>
+  </div>
+  <%= f.hidden_field :id %>
+<% end %>

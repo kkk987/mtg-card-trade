@@ -8,6 +8,7 @@ class TradesController < ApplicationController
 
     def update
         seller = User.register_seller(User.find(current_user.id), params[:user][:registered].to_i)
+    
         if seller
             flash[:alert] = "Your changes have been saved"
         else
