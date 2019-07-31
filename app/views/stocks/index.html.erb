@@ -20,7 +20,7 @@
     <% @stock.each do |item| %>
       <tr>
       <%# Add a link to the card page %>
-        <th><%= item.card.title.capitalize%></th>
+        <th><%= link_to item.card.title.capitalize, card_path(item.card.id)%></th>
         <th><%= item.condition.capitalize %></th>
         <th><%= item.price %></th>
         <th><%= item.quantity %></th>
