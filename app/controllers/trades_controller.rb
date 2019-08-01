@@ -1,5 +1,13 @@
 class TradesController < ApplicationController
     def index
+        @stock = Stock.new
+        respond_to do |format|
+          format.html
+          format.json {
+            @card = Card.search(params[:term])
+            render json:@card.map(&:title).uniq
+        }
+        end
     end
 
     def edit
@@ -15,5 +23,9 @@ class TradesController < ApplicationController
             flash[:alert] = "There was an error with your change"
         end
         redirect_to root_path
+    end
+
+    def show
+        @cards = Card.where("title = ?", params[:card][:title]).first
     end
 end
