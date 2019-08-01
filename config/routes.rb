@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :cards, only: [:index, :new, :edit, :show]
   resources :stocks, only: [:index, :new, :create, :edit, :update]
   delete "/stocks/:id", to: "stocks#destroy", as: "delete_stock"
+  resources :order_items, only: [:new, :create]
 end
