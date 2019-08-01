@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   after_initialize :init
   has_many :stocks, foreign_key: "seller_id", dependent: :destroy
+  has_many :orders, foreign_key: "buyer_id", dependent: :destroy
   # Set the default seller registration to false
   def init
     self.registered ||= false
