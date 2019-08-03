@@ -11,11 +11,11 @@
                 <p>Condition: <%= item.stock.condition %></p>
                 <p>Price: <%= item.stock.price %></p>
                 <%= form_with model: item, local: true do |f| %>
-                  <p>Quantity: <%= f.number_field :quantity, max: item.quantity, min: 1,   step: 1 %></p>
+                  <p>Quantity: <%= f.number_field :quantity, max: item.stock.quantity, min: 1, step: 1 %></p>
                   <br>
                   <div class = "buttons are-normal">
                     <%= f.submit "Update", class: "button is-rounded" %>
-                    <%= f.button "Delete", class: "button is-rounded" %>
+                    <button class = "button is-rounded"><%= link_to "Delete", item, method: "delete", data: {confirm: "Are you sure?"} %></button>
                     <%= f.button "Checkout", class: "button is-rounded" %>
                   </div>
                 <% end %>

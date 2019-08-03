@@ -10,7 +10,7 @@ class OrderItemsController < ApplicationController
     order_item = OrderItem.new(quantity: params[:order_item][:quantity])
     
     # create a new order for current user and assign the buyer id in order
-    current_user.order.push(order) if current_user.order.empty?
+    current_user.order.push(order) if current_user.order.nil?
     # add a new order item in the new order and assign the order id in order item
     order.order_items.push(order_item)
     # assign stock id in order item
@@ -25,6 +25,23 @@ class OrderItemsController < ApplicationController
   end
 
   def update
-    
+    order_item = OrderItem.find(params[:id])
+    order_item.quantity = params[:order_item][:quantity].to_i
+    if order_item.save
+      flash[:notice] = "Your change has been saved"
+      redirect_to orders_path
+    else
+      flash[:alert] = "There was a problem creating your order"
+    end
+  end
+
+  def destroy
+    order_item = OrderItem.find(params[:id])
+    if !order_item || !order_item.destroy || order_item.save
+      flash[:alert] = "There was a problem creating your order"
+    else
+        flash[:alert] = "Your order record has been removed successfully"
+    end
+    redirect_to orders_path
   end
 end

@@ -3,16 +3,6 @@ class StocksController < ApplicationController
     @stock = Stock.sort_my_stock(current_user.id)
   end
 
-  # def card_name_autocomplete
-  #   respond_to do |format|
-  #     format.html
-  #     format.json {
-  #       @card = Card.search(params[:term])
-  #       render json:@card.map(&:title).uniq
-  #   }
-  #   end
-  #   return @card
-  # end
   def new
     @stock = Stock.new
     respond_to do |format|
