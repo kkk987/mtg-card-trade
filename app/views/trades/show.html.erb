@@ -1,0 +1,21 @@
+<h1 class = "title is-1">Market</h1>
+
+<div class="tile is-ancestor">
+  <div class="tile is-6 is-vertical is-parent">
+    <% @cards.stocks.each do |item| %>
+    <div class="tile is-child box">
+
+      <p>Title: <%= item.card.title %></p>
+      <p>Seller: <%= item.seller.username.capitalize %></p>
+      <p>Condition: <%= item.condition %></p>
+      <p>Quantity: <%= item.quantity %></p>
+      <p>Price: <%= item.price %></p>
+      
+      <%= link_to "Add to cart" %>
+    </div>
+    <% end %>
+    <div class="tile is-child box">
+      <p class="title">Two</p>
+    </div>
+  </div>
+</div>
