@@ -20,12 +20,17 @@ class OrdersController < ApplicationController
     currency: 'aud',
     quantity: @order_item.quantity, 
     }],
-    success_url: 'http://localhost:3000/orders/new/complete',
+    success_url: orders_new_complete_url(id: @order_item.id),
     cancel_url: 'http://localhost:3000/orders/new/cancel',
     )
   end
 
   def complete
-    
+    order_item = OrderItem.find(params[:id])
+    if !order_item || !order_item.destroy || order_item.save
+      flash[:alert] = "There was a problem removing your order"
+    else
+      flash[:notice] =  "Your order item is successfully paid, it is removed from cart now"
+    end
   end
 end
