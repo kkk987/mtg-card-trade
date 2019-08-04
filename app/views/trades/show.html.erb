@@ -13,6 +13,10 @@
             <%= link_to "View item", new_order_item_path(stock: item.id)%>
           </div>
         <% end %>
+        <% if @cards.stocks.empty? %>
+          <h1 class = "title is-2">Please search by a valid card title</h1>
+        <% end %>
+        <%= link_to "Back", :back %>
       </div>
     </div>  
   </div>

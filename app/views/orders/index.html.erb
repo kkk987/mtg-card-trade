@@ -1,7 +1,6 @@
 <section class = "section">
   <div class = "container">
-    <h1 class = "title is-1 is-primary">Cart</h1>
-    <h1 class = "title is-2 is-primary">Total: <%= @total %></h1>
+    <h1 class = "title is-1">Cart</h1>
     <div class="tile is-ancestor">
       <div class="tile is-6 is-vertical is-parent">
           <% @items&.each do |item| %>
@@ -12,11 +11,20 @@
                 <p>Price: <%= item.stock.price %></p>
                 <%= form_with model: item, local: true do |f| %>
                   <p>Quantity: <%= f.number_field :quantity, max: item.stock.quantity, min: 1, step: 1 %></p>
+                <p>Total: <%= number_to_currency item.stock.price*item.stock.quantity %></p>
                   <br>
                   <div class = "buttons are-normal">
-                    <%= f.submit "Update", class: "button is-rounded" %>
-                    <button class = "button is-rounded"><%= link_to "Delete", item, method: "delete", data: {confirm: "Are you sure?"} %></button>
-                    <%= f.button "Checkout", class: "button is-rounded" %>
+                    <div class = "columns is-vcentered">
+                      <div class="column">
+                        <%= f.submit "Update", class: "button is-rounded" %>
+                      </div>
+                      <div class="column">
+                        <button class = "button is-rounded"><%= link_to "Delete", item, method: "delete", data: {confirm: "Are you sure?"} %></button>
+                      </div>
+                      <div class="column">
+                        <button class = "button is-rounded"><%= link_to "Checkout", new_order_path(id: item.id) %></button>
+                      </div>
+                    </div>
                   </div>
                 <% end %>
                   <div>

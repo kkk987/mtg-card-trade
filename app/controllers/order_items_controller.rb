@@ -38,7 +38,7 @@ class OrderItemsController < ApplicationController
   def destroy
     order_item = OrderItem.find(params[:id])
     if !order_item || !order_item.destroy || order_item.save
-      flash[:alert] = "There was a problem creating your order"
+      flash[:alert] = "There was a problem removing your order"
     else
         flash[:alert] = "Your order record has been removed successfully"
     end
