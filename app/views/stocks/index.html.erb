@@ -1,33 +1,38 @@
-<div class = "level has-margin-left-20">
-  <h1 class = "title is-1 level-left">Your stocks</h1>
-  <p class = "level-right is-family-monospace"><%= link_to 'Add stock', new_stock_path, class: "button is-rounded" %></p>
-</div>
-<h1 class = "title is-3 has-text-centered">Stock list:</h1>
-<div class = "column is-half is-offset-one-third">
-<table class = "table is-hoverable">
-  <thead>
-    <tr>
-      <%# <th>No:</th> %>
-      <th>Title:</th>
-      <th>Condition:</th>
-      <th>Price:</th>
-      <th>Quantity:</th>
-      <th></th>
-      <th></th>
-    </tr>
-  <thead>
-  <tbody>
-    <% @stock.each do |item| %>
-      <tr>
-      <%# Add a link to the card page %>
-        <th><%= link_to item.card.title.capitalize, card_path(item.card.id)%></th>
-        <th><%= item.condition.capitalize %></th>
-        <th><%= item.price %></th>
-        <th><%= item.quantity %></th>
-        <th><%= link_to "Edit", edit_stock_path(item.id, id:item.id) %></th>
-        <th><%= link_to "Delete", delete_stock_path(item.id), data: { confirm: "Are you sure?" }, method: :delete %></th>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
+<section class = "section">
+  <div class = "container">  
+    <div class = "level has-margin-left-20">
+      <h1 class = "title is-1 level-left">Your stocks</h1>
+      <p class = "level-right is-family-monospace"><%= link_to 'Add stock', new_stock_path, class: "button is-rounded" %></p>
+    </div>
+    <h1 class = "title is-3 has-text-centered">Stock list:</h1>
+    <div class = "columns is-half is-centered">
+      <div class = "column is-half">
+        <table class = "table is-hoverable">
+          <thead>
+            <tr>
+              <th>Title:</th>
+              <th>Condition:</th>
+              <th>Price:</th>
+              <th>Quantity:</th>
+              <th></th>
+              <th></th>
+            </tr>
+          <thead>
+          <tbody>
+            <% @stock.each do |item| %>
+              <tr>
+              <%# Add a link to the card page %>
+                <th><%= link_to item.card.title.capitalize, card_path(item.card.id)%></th>
+                <th><%= item.condition.capitalize %></th>
+                <th><%= item.price %></th>
+                <th><%= item.quantity %></th>
+                <th><%= link_to "Edit", edit_stock_path(item.id, id:item.id) %></th>
+                <th><%= link_to "Delete", delete_stock_path(item.id), data: { confirm: "Are   you   sure?" }, method: :delete %></th>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,13 +1,16 @@
-<h1 class = "title is-size-1-desktop is-size-3-tablet is-size-5-mobile has-text-centered">Hello Traders</h1>
+<section class = "section">
+  <div class = "container">
+    <h1 class = "title is-size-1-desktop is-size-3-tablet is-size-5-mobile has-text-centered">Hello Traders</h1>
 
-<%= form_with url:trades_show_path, method: :get, local:true do |f| %>
-  <div class = "is-size-3 has-text-centered">
-    <%= f.fields_for :card, @stock.card do |card_form| %>
-    <%= card_form.text_field :title, required: true, id: "card-autocomplete", minlength: 1, class: "input is-rounded search-bar", placeholder: "Please enter a title ... " %>
+    <%= form_with url:trades_show_path, method: :get, local:true do |f| %>
+      <div class = "is-size-3 has-text-centered">
+        <%= f.fields_for :card, @stock.card do |card_form| %>
+        <%= card_form.text_field :title, required: true, id: "card-autocomplete", minlength:  1,   class: "input is-rounded search-bar", placeholder: "Please enter a title ... " %>
+        <% end %>
+      </div>
+      <div class = "buttons is-centered" >
+        <%= f.submit "Search" , class: "button is-rounded", method: :get %>
+      </div>
     <% end %>
   </div>
-  <div class = "buttons is-centered" >
-    <%= f.submit "Search" , class: "button is-rounded", method: :get %>
-  </div>
-  
-<% end %>
+</section>

@@ -1,9 +1,13 @@
-<h1 class="has-text-grey-dark title is-size-1-desktop is-size-3-tablet is-size-5-mobile">Cards</h1>
+<section class = "section">
+  <div class = "container">
+    <h1 class="has-text-grey-dark title is-size-1-desktop is-size-3-tablet is-size-5-mobile">Cards</h1>
 
-<% if @cards %>
-<% @cards.each do |card| %>
-    <section class="list-item">
-        <%=render "shared/card_item", card: card%>
-    </section>
-<%end%>
-<%end%>
+    <% if @cards %>
+        <% @cards.each do |card| %>
+            <section class="list-item">
+                <%=render "shared/card_item", card: card%>
+            </section>
+        <%end%>
+    <%end%>
+  </div>
+</section>

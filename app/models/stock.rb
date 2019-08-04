@@ -7,6 +7,7 @@ class Stock < ApplicationRecord
   validates :condition, presence: true, inclusion: {in: ["Brand new", "Mint", "Lightly played", "Battle scarred", "Defeated"]}
   validates :seller_id, presence: true
   validates :card_id, presence: true
+  has_many :order_items, foreign_key: "stock_id", dependent: :destroy
 
   def self.create_stock(card_id, user_id, condition, price, quantity)
     # card_id = Card.where("title = ?", title).first.id

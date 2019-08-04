@@ -1,0 +1,15 @@
+<section class = "section">
+  <div class = "container">
+    <h1 class = "title is-1 has_text-centered">Title: <%= @item.card.title %></h1>
+    <h1 class = "title is-1 has_text-centered">Seller Name: <%= @item.seller.username.capitalize %></h1>
+    <h1 class = "title is-1 has_text-centered">Condition: <%= @item.condition %></h1>
+    <h1 class = "title is-1 has_text-centered">Quantity: <%= @item.quantity %></h1>
+    <h1 class = "title is-1 has_text-centered">Price: <%= @item.price %></h1>
+    <%= form_with model: @order_item, local:true do |f| %>
+      <%= label(:quantity,"Qty")%>
+      <%= f.number_field :quantity, max: @item.quantity, value: 1 %>
+      <%= f.hidden_field :stock_id, value: @item.id %>
+      <%= f.submit "Submit order", class: "button is-rounded"%>
+    <% end %>
+  </div>
+</section>
