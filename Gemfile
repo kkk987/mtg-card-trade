@@ -34,13 +34,16 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Required in checkout part
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'cloudinary', require: false
 gem 'activestorage-cloudinary-service'
 
-#Add jquery ui autocomplete gem
+# Add jquery ui autocomplete gem
 gem 'jquery-ui-rails'
 gem 'jquery-rails'
 group :development, :test do
