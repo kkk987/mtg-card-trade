@@ -5,12 +5,16 @@ class OrderItemsController < ApplicationController
   end
 
   def create
+    if current_user.order.nil?
+      current_user.order = Order.new
+    end
+
     order = current_user.order
     stock = Stock.find(params[:order_item][:stock_id])
     order_item = OrderItem.new(quantity: params[:order_item][:quantity])
     
     # create a new order for current user and assign the buyer id in order
-    current_user.order.push(order) if current_user.order.nil?
+    # current_user.order = order if current_user.order.nil?
     # add a new order item in the new order and assign the order id in order item
     order.order_items.push(order_item)
     # assign stock id in order item
