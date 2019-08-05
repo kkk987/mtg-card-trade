@@ -35,7 +35,6 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-  var stripe = Stripe('pk_test_KN8QvLl0J3quwxUFBKgZriCb0040UHHqIk');
   function redirectToStripe(){
     stripe.redirectToCheckout({
       sessionId: '<%= @session.id %>'
@@ -46,4 +45,7 @@
     });
   }
   document.querySelector("#pay-now").addEventListener("click", redirectToStripe)
+  document.addEventListener("DOMContentLoaded", function() {
+    var stripe = Stripe('pk_test_KN8QvLl0J3quwxUFBKgZriCb0040UHHqIk');
+  })
 </script>
