@@ -1,0 +1,47 @@
+<section class = "section">
+  <div class = "container">
+    <h1 class = "title">Your order</h1>
+    <table>
+      <tr>
+        <th>Title: <%= @order_item.stock.card.title %></th>
+      </tr>
+      <tr>
+        <th>Seller: <%= @order_item.stock.seller.username %></th>
+      </tr>
+      <tr>
+        <th>Conditon: <%= @order_item.stock.condition %></th>
+      </tr>
+      <tr>
+        <th>Price: <%= @order_item.stock.price %></th>
+      </tr>
+      <tr>
+        <th>Quantity: <%= @order_item.quantity %></th>
+      </tr>
+      <tr>
+        <th>Total: <%= @order_item.quantity * @order_item.stock.price %></th>
+      </tr>
+    </table>
+    <br>
+    <div>
+      <button class = "button is-rounded" id = "pay-now">Confirm payment</button>      
+    </div>
+    <br>
+    <div>
+      <button class = "button is-rounded"><%= link_to "Back", :back%></button>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    var stripe = Stripe('pk_test_KN8QvLl0J3quwxUFBKgZriCb0040UHHqIk');
+  stripe.redirectToCheckout({
+    sessionId: '<%= @session.id %>'
+  }).then(function (result) {
+  // If `redirectToCheckout` fails due to a browser or network
+  // error, display the localized error message to your customer
+  // using `result.error.message`.
+  });
+  document.querySelector("#pay-now").addEventListener("click", redirectToStripe)
+</script>

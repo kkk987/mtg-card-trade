@@ -17,6 +17,8 @@ Devise
 Cloudinary
 Stripe
 Bulma
+Jquery
+Jquery-rails
 
 # DATABASING
 Describe database structure (Pros & Cons)
