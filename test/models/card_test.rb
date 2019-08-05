@@ -40,4 +40,5 @@ describe Card, :type => :model do
     release_date= Card.new(date: nil)
     expect(release_date).to_not be_valid
   end
+  
 end
