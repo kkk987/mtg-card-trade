@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
   def index
+    if current_user.order.nil?
+      current_user.order = Order.new
+    end
     @items = current_user.order.order_items
     @order = current_user.order
     
