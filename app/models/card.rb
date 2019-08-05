@@ -1,7 +1,7 @@
 class Card < ApplicationRecord
-
 has_one_attached :face
 has_many :stocks, dependent: :destroy
+validates_presence_of :title, :card_type, :color, :rarity, :converted_mana_cost, :set, :date
   
   def self.search(term)
     where("LOWER(title) ILIKE :term", term: "%#{term.downcase}%")
