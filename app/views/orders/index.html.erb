@@ -11,7 +11,7 @@
                 <p>Price: <%= item.stock.price %></p>
                 <%= form_with model: item, local: true do |f| %>
                   <p>Quantity: <%= f.number_field :quantity, max: item.stock.quantity, min: 1, step: 1 %></p>
-                <p>Total: <%= number_to_currency item.stock.price*item.stock.quantity %></p>
+                <p>Total: <%= number_to_currency item.stock.price*item.quantity %></p>
                   <br>
                   <div class = "buttons are-normal">
                     <div class = "columns is-vcentered">
