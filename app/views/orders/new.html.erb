@@ -35,13 +35,15 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-    var stripe = Stripe('pk_test_KN8QvLl0J3quwxUFBKgZriCb0040UHHqIk');
-  stripe.redirectToCheckout({
-    sessionId: '<%= @session.id %>'
-  }).then(function (result) {
-  // If `redirectToCheckout` fails due to a browser or network
-  // error, display the localized error message to your customer
-  // using `result.error.message`.
-  });
+  var stripe = Stripe('pk_test_KN8QvLl0J3quwxUFBKgZriCb0040UHHqIk');
+  function redirectToStripe(){
+    stripe.redirectToCheckout({
+      sessionId: '<%= @session.id %>'
+    }).then(function (result) {
+      // If `redirectToCheckout` fails due to a browser or network
+    // error, display the localized error message to your customer
+    // using `result.error.message`.
+    });
+  }
   document.querySelector("#pay-now").addEventListener("click", redirectToStripe)
 </script>
