@@ -9,7 +9,7 @@ class CardsController < ApplicationController
     end
 
     def face
-    @card.face.attach(params[:card] [:face])
+        @card.face.attach(params[:card] [:face])
     end
 
 end
