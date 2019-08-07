@@ -247,7 +247,7 @@ https://github.com/kkk987/mtg-card-trade.git
   
     * 
   
-  * SRC control process
+  * Source control process
   
     ![image](https://user-images.githubusercontent.com/8579501/62620152-dcdacc80-b95b-11e9-9c5f-8eb4f33989e5.png)
   
@@ -255,10 +255,71 @@ https://github.com/kkk987/mtg-card-trade.git
 
   * Testing
 
-# INFO SEC AND USER DATA
-  * Discuss and analyse information security
-  * Discuss info security methods
+# INFORMATION SECURITY AND USER DATA
+  * Discuss and analyse information security and methods
+    * Current information security issues:
+      * User authentication
+        * Issues:
+        - Authenticate users before they access certain pages like member only pages
+        - Minimun access right
+        - Account information storage
+        - Backup for user information
+
+        * Solutions:
+          - Use before_action to authenticate users when they access certain pages like memebr only pages
+          - User account should be given minimum access right that allows them use the website features
+          - Colud backup could be a good solution that keeps user information secure and recoverable
+  
+      * Payment checkout
+        * Issues:
+          - Checkout session includes sensitive user information
+          - Secure checkout session
+        * Solutions
+          - Use third party checkout service Stripe which provides better security for checkout
+          - Using one time checkout so that sensitive information won't be recorded
+          - Stripe javascript library is included in each page to detect anomalous behavior that may be indicative of fraud as customers browse the website
+  
+    * Future information security features
+    * Access, Authentication, and Authorization Management
+      - Grant the minimum, sufficient access or privileges
+      - Review accounts at least annually
+      - Manage passwords and password processing securely
+      - Require two-factor authentication for system access 
+
+    * Disaster recovery planning and data backup
+      - Identify mission critical systems
+      - Evaluate new systems prior to go-live
+      - Align data backup procedures with DR objectives
+      - Identify primary responsibility for data backup
+  
+    * Electronic data disposal
+      - Sanitize device/storage media before transfer
+      - Remove licensed software from device/storage media before transfer
+  
+    * Encryption
+      - Use encryption that meets NIST FIPS minimum requirements
+      - Encrypt data at rest in data centers
+      - Encrypt data at rest with cloud providers
+  
+    * Information security risk management
+      - Categorize IT assets according to their sensitivity and criticality
+      - Conduct risk assessments annually
+      - Maintain risk assessment data as confidential, classified as High
+      - Implement the appropriate risk-reducing controls
+
   * Research legality
+    As this app handles personal information, therefore, we have obligations to protect user information from theft, misuse, interference, loss, unauthorised access, modification and disclosure. And these obligations are under the Pravicy Act 1988 that regualtes business owners who require to handle personal information. 
+
+    To comply these regulations, there are some methods could be used:
+    - Review database annually 
+    - Backup user information in multiple places such as cloud database
+    - Structured database
+    - Encrypt sensitive information such user address, names and contact detail
+    - Make information security risk management
+    - Have a recovery plan
+    - Maintain risk assessment data as confidential
+
+
 
 # DATABASE DESIGN
   * Database infrastructure
