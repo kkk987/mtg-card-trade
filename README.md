@@ -145,8 +145,17 @@ https://github.com/kkk987/mtg-card-trade.git
 
 # ARCHITECTURE AND HIGH LEVEL DESIGN
   * Application architecture
+  
+    ![Mtg-market-structure](https://user-images.githubusercontent.com/8579501/62594619-91ee9400-b91e-11e9-8a99-72a01b2ca845.png)
+  
   * High level components
+  
+    * 
+  
   * Data structure of similar app/site
+  
+    * 
+  
   * User Stories
 
     * US-1: User can login/out.
@@ -158,9 +167,21 @@ https://github.com/kkk987/mtg-card-trade.git
     * US-6: User can manage their cart
 
   * Wireframe
+  
+    * 
+
   * Planning and Tracking
+  
+    * 
+
   * Agile methodology implementation
+  
+    * 
+  
   * SRC control process
+  
+    *
+  
   * Testing
 
 # INFO SEC AND USER DATA
