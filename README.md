@@ -150,8 +150,74 @@ https://github.com/kkk987/mtg-card-trade.git
   
   * High level components
   
-    * 
+    * Controllers
   
+      * Trades
+        Trades controller is responsible for
+        - rendering root page in trades/index.html.erb
+        - let user register/unregister as a seller in trades/edit.html.erb
+        - show stock result in trades/show.html.erb
+
+      * Cards
+        Cards controller is responsible
+        for
+        - show all cards in database in cards/index.html.erb
+        - show detail of a card in cards/show.html.erb
+  
+      * Stocks
+        Stokc controller is responsible for
+        - show all stocked item to seller in stocks/index.html.erb
+        - add a new stock in stocks/new.html.erb
+        - edit a stock in stocks/edit.html.erb
+        - delete a stock
+  
+      * Orders
+        Orders controller is responsible for
+        - show user what is in cart in orders/index.html.erb
+        - checkout an item in orders/new.html.erb
+        - confirm payment of an item in cart in orders/complete.html.erb
+        - delete an item
+
+      * Order_items
+        Order_items controller is responsible for
+        - add new item in cart in order_items/new.html.erb
+        - edit an item in cart in orders/index.html.erb
+        - delete an item in cart in orders/index.html.erb
+  
+    * Models
+  
+      * User
+        User model stores all user information and provides corresponding information when there is a request from controllers.
+
+        It is also responsible for
+        - seller registration/unregistration
+        - show user name when there is one
+      
+      * Stock
+        Stock model stores all stock information that a seller has. Owner of the stock can edit their stoke items.
+
+        It is also responsible for
+        - creat a stock
+        - update the stock item
+        - sort the stock in latest to earliest order
+      
+      * Card
+        Card model stores all cards information.
+
+        It is also responsible for
+        - search a card
+        - return a particualr card id
+      
+      * Order
+        Order model stores all information in the cart
+
+        It is also responsible for
+        - calculating the total price in the cart (not in use at moment, this is designed for a future features that users can checkout everything in their cart )
+      
+      * OrderItem
+        OrderItem model stores all information about an ordered item which is composed of buyer, seller, item and items quantity.
+
+
   * Data structure of similar app/site
   
     * 
