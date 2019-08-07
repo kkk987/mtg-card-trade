@@ -219,8 +219,11 @@ https://github.com/kkk987/mtg-card-trade.git
 
 
   * Data structure of similar app/site
-  
-    * 
+    There are a couple of app/sites that serves a similar goal as our app. One of the examples if eBay.
+    * eBay:
+      ebay uses a strict data structrue to improve teh efficiency of the data searching and well prepared for things fail to work. When sellers on ebay wants to sell an item, it will be a list of categories (such as quantity, price etc) for them to pick. By doing that, ebay can have structured data for each item which enables better performance.
+
+      ebay also plans with question like what if the load is ten times more. This enables them be prepared for unexpected situations.
   
   * User Stories
 
