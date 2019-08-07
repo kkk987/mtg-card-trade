@@ -122,6 +122,8 @@ https://github.com/kkk987/mtg-card-trade.git
 
   * Describe the production database setup
 
+    In this prpject, we use postgres from both our development and production. The schema config and seed files are compatible with each other. To setup heroku postgres, we are doing similar steps that we were doing in local environment.
+
     * To prepare
     1. Create a heroku account if you don't have one
     2. Install heroku CLI from the fowlling link
