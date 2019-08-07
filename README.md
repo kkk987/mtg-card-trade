@@ -104,8 +104,42 @@ https://github.com/kkk987/mtg-card-trade.git
       In this app, heroku is our primary deploy platform. We used an auto deploy feature that heroku provided to deploy our app when the master branch on git repository has a change.
 
 # DATABASING
-  * Describe database structure (Pros & Cons)
-  * Describe database setup (Production)
+  * Describe database structure
+      
+      In this app, we use postgres as our primary database for our development. For production part, heroku provides its own databae which is called 'Heroku Postgres' which is based on postgres as well. Therefore, we can deploy our database setting without extra work.
+
+    * Pros
+
+      There are a couple of benifits of adpating postgres. The first is that it is one of the most popular databases management systems. Therefore, it has many extention scipts to serve different purposes.
+
+      Second, it is a feature rich management system. Developers can write own extention scripts very easily.
+
+      Last, it supports migration from other major open source database. For this project, one of the future features is to import all maigc card information into our database. This feature can help us to better achieve it
+
+    * Cons
+
+      As we mentioned in above section, this is a feature rich database management system. Hence, it will take some time for developers to learn what postgres are capable of. And with these included features, it might be an overkill for small projects.
+
+  * Describe the production database setup
+
+    * To prepare
+    1. Create a heroku account if you don't have one
+    2. Install heroku CLI from the fowlling link
+      https://devcenter.heroku.com/articles/heroku-cli#download-and-instal
+    3. Run 'heroku login' on your terminal
+    
+    * Setup
+    1. Create app on heroku using 'heroku create <app_name>' (you can check with 'git remote -v')
+    2. Set heroku master key using 'heroku config:set RAILS_MASTER_KEY = <your_key>'
+    3. Commit your changes, then push to heroku using 'git push heroku master'
+   
+   * Database setup
+    1. Load schema file in heroku using 'heroku run rails db:schema:load'
+    2. Migrate the database changes in heroku using 'heroku run rails db:migrate'
+    3. Load seed file in heroku using 'heroku rails db:seed;
+    4. Check your database.yml make sure it has configs for production
+
+
 
 # ARCHITECTURE AND HIGH LEVEL DESIGN
   * Application architecture
