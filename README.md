@@ -241,7 +241,7 @@ https://github.com/kkk987/mtg-card-trade.git
 
   * Planning and Tracking
   
-    * 
+    This project is planned and tracked through trello board. Team members need to explain to the rest of the team what they did yesterday or last week and update the coresponding tasks on trello. If there are any issues, we use slack to communicate with others. The detailed meeting records can be found in documents/meeting_record.pdf. 
 
   * Agile methodology implementation
   
@@ -249,7 +249,7 @@ https://github.com/kkk987/mtg-card-trade.git
   
   * SRC control process
   
-    *
+    * 
   
   * Testing
 
@@ -262,6 +262,9 @@ https://github.com/kkk987/mtg-card-trade.git
   * Database infrastructure
   * Schema design
   * ERD
+  
+    ![Mtg-erd](https://user-images.githubusercontent.com/8579501/62619053-21b13400-b959-11e9-9d7b-4c01be79673e.png)
+
   * Tracked Entities
   * Database relations
   * Entity relationships/associations
