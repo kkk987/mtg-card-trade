@@ -12,6 +12,10 @@ https://mtg-card-trades.herokuapp.com/
 https://github.com/kkk987/mtg-card-trade.git
 
 
+# Instructions:
+
+
+
 # App description:
   * Purpose:
 
@@ -44,46 +48,89 @@ https://github.com/kkk987/mtg-card-trade.git
 
 
 # THIRD PART SERVICES
-Devise
-Cloudinary
-Stripe
-Bulma
-Jquery
-Jquery-rails
+
+  All third party softwares and services are included in gem files. Please 'bundle install' first.
+
+  * Third paty softwares
+    
+    * Devise
+
+      Devise provides a flexible authentication solution for rails. It is MVC based, modularized and allows multiple models sign in at the same time. It also provides many useful built-in methods such as current_user which will pass the user object of the current login session.
+
+      Devise covers 10 modules related to user authentication. They can be used all together of separately. In this app, the following features are used:
+          - Sign up
+          - Log in/out
+          - Email and password validation
+
+    * Bulma
+
+      Bulma is a free open-source, CSS framwork based on flexbox. It allows developers to style their websites in an efficient way with responsive designs. Since it is css based, developers can style their html files while design them. Bulma also allows customization for its style methods which provides more flexibilities in styling.
+      
+      As this app is still in protoype stage, a quick style solution can help us to better visualize our designs.
+
+    * Jquery
+
+      Jquery is a fast, small and feature rich javaScript library. In this app, jquesy is a pre-requirement for Jquery-rails to be used.
+    
+    * Jquery-rails
+
+      Jquery-rails generates jquery for rails and it has multiple features that allow people has little knowledge of javascript to use. 
+      
+      In this app, jquery-rails enables auto-complete search feature that minimizes the typing error and improve the user experience.
+
+    * Rspec
+
+      Rspec is testing tool designed for rails. One of the features of rspec is that it uses human langues more than normal coding languages. That provides more readability for developers and managers.
+      
+      In this app, it provides auto testings for each unit such model and controller to make sure they act as we expected. 
+
+  * Third party services
+
+    * Cloudinary
+      Cloudinary provides a cloud-based image and video management solution. It allows users to upload, store, manage and delivery images and videos.
+      
+      In this app, it is installed for the future features advancements which allow a stock and a card has an image attachment.
+
+    * Stripe
+
+      Stripe is third party checkout service. It helps user to do make a secure and fast checkout. And depends on the market type, it also provides checout solutions for multiple vendors market which allows buyer to pay multiple sellers at once. 
+
+      Since this app is still in development stage, it uses one time checkout session that Stripe provides. The benefits for this type of checkout is that user's sensitive information won't be recorded which provides less risks of privacy leakage. The disadvantage is that user will need to enter their card detail every time.
+
+    * Heroku
+
+      Heroku is a cloud platform that allows user to deploy their app online. Heroku provides its own network framwork and database which enables user to make swift deployment of their app. And heroku adapts deployment from git which makes it more convenient for deployment.
+
+      In this app, heroku is our primary deploy platform. We used an auto deploy feature that heroku provided to deploy our app when the master branch on git repository has a change.
 
 # DATABASING
-Describe database structure (Pros & Cons)
-Describe database setup (Production)
+  * Describe database structure (Pros & Cons)
+  * Describe database setup (Production)
 
 # ARCHITECTURE AND HIGH LEVEL DESIGN
-Application architecture
-High level components
-
-Data structure of similar app/site
-
-User Stories
-Wireframe
-
-Planning and Tracking
-
-Agile methodology implementation
-
-src control process
-testing
+  * Application architecture
+  * High level components
+  * Data structure of similar app/site
+  * User Stories
+  * Wireframe
+  * Planning and Tracking
+  * Agile methodology implementation
+  * SRC control process
+  * Testing
 
 # INFO SEC AND USER DATA
-Discuss and analyse info sec
-discuss info sec methods
-research legality
+  * Discuss and analyse information security
+  * Discuss info security methods
+  * Research legality
 
 # DATABASE DESIGN
-Database infrastructure
-Schema design
-ERD
-Tracked Entities
-Database relations
-Entity relationships/associations
-Model relationships
+  * Database infrastructure
+  * Schema design
+  * ERD
+  * Tracked Entities
+  * Database relations
+  * Entity relationships/associations
+  * Model relationships
 
 # DATABASE IMPLEMENTATION
-Identify appropriate model methods
+  * Identify appropriate model methods
