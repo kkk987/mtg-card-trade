@@ -249,8 +249,10 @@ https://github.com/kkk987/mtg-card-trade.git
   
   * SRC control process
   
-    * 
+    ![image](https://user-images.githubusercontent.com/8579501/62620152-dcdacc80-b95b-11e9-9c5f-8eb4f33989e5.png)
   
+    ![image](https://user-images.githubusercontent.com/8579501/62620196-fda32200-b95b-11e9-9e5a-90065c4053bf.png)
+
   * Testing
 
 # INFO SEC AND USER DATA
