@@ -148,6 +148,15 @@ https://github.com/kkk987/mtg-card-trade.git
   * High level components
   * Data structure of similar app/site
   * User Stories
+
+    * US-1: User can login/out.
+    * US-2: User can view all cards that match a particular title
+    * US-3: User can view all cards available for sale
+    * US-4: User can view all cards in the database
+    and view the detail of a particular card
+    * US-5: User can manage their stock
+    * US-6: User can manage their cart
+
   * Wireframe
   * Planning and Tracking
   * Agile methodology implementation
