@@ -356,14 +356,25 @@ https://github.com/kkk987/mtg-card-trade.git
       - username (string)
       - email (string)
       - password (string)
+      - registered (boolean)
     * Order table
-    
+      - id (integer)
+      - buyer_id (integer)
+      - total (decimal)
     * OrderItem table
-    
+      - id (integer)
+      - order_id (integer)
+      - quantity (integer)
+      - stock_id (integer)
     * Stock table
-    
+      - id (integer)
+      - card_id (integer)
+      - seller_id (integer)
+      - quantity (integer)
+      - price (decimal)
+      - condition (string)
     * Card table
-  
+      - id (integer)
   * Model relationships
     
     * User has one order (one to one)
