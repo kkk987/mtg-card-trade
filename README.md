@@ -322,16 +322,72 @@ https://github.com/kkk987/mtg-card-trade.git
 
 
 # DATABASE DESIGN
-  * Database infrastructure
-  * Schema design
   * ERD
-  
+
     ![Mtg-erd](https://user-images.githubusercontent.com/8579501/62619053-21b13400-b959-11e9-9d7b-4c01be79673e.png)
 
-  * Tracked Entities
-  * Database relations
-  * Entity relationships/associations
-  * Model relationships
+  * Understanding of relational database
+    The database of this app is composed of 5 tables for current version which are User table, Order table, OrderItem table, Stock table and Card table. Each table ueses a unique ID generated from postgres as its primary key that can be used to identify each record. We also use foreign keys in some of tables to prevent data duplication and to keep the integrity of data. Both user table and OrderItem are good examples of this. Besides this, we valid all input information that enters our database to minimize the risks of database contamination. The purpose of each table is explained below.
 
-# DATABASE IMPLEMENTATION
-  * Identify appropriate model methods
+    * User table
+      User table stores all information about a user inclduing id(or user_id as pk), email, password, username and registered (as a seller). This table is generated from devise gem. Therefore, it has a complete validation for email format and password such as minimum length of password and email must be example@email.com format. 
+      
+      The original design is to have a seller table that stores all registered sellers. Since we simplified the process of being a seller, seller table will only have dulicated user data. As a result, we decide to remove the seller table from current version and add a new column in user table to indeciate who is a seller. But we will add the seller table later on as we will require more detail from a user when he/she wants to register as a seller.
+
+      Hence when a user is created, it is assumed to be a buyer only unless the user wants to register as a seller later on.
+
+      As one of the features of this app, users can decide their usernames. But this is optional, if user doesn't choose a username, their email address will be displayed instead.
+
+    * Order table
+      Order table stores all information related to cart including id (or order_id as pk) buyer_id (as fk) and total cost. Every time when user makes an action (such as add/update/delete/checkout an item) in the cart, the order needs to update itself and save the changes. Since an order needs to konw who ordered what, it uses foreign keys to access user table and orderitem table.
+
+    * OrderItem table
+      OrderItem table stores information about a particular item that is placed in a user's order. It includes id(or order_item_id as pk), order_id (as fk), stock_id (as fk) and quantity. This table is a good example of using foreign key. It accessed order table and stock table for required information instead of storing them in the table itself. The benefit of doing this is to prevent data duplication, keep the integrity of data and reduce the amount of database access. 
+    
+    * Stock table
+      Stock table stores information about a seller's stock. It includes id (or stock_id as pk), card_id (as fk), seller_id (as fk), quantity, price and condition. Once a seller stocks an item, the stocked item will be displayed in the market. This table uses foreign keys to access to user table and card table for required information.
+
+    * Card table
+      Card table stores all attributes about a card. This includes id (card_id as pk), title, type, color, rarity, converted_mana_cost, set and date. As Magic cards are realeased by Wizards of Coast, this table is designed as a card library that stores all published cards (which is a future feature). Therefore, this table should only be edited by admin users (which is also another future feature).
+
+  * Entities
+    * User table
+      - id (integer)
+      - username (string)
+      - email (string)
+      - password (string)
+    * Order table
+    
+    * OrderItem table
+    
+    * Stock table
+    
+    * Card table
+  
+  * Model relationships
+    
+    * User has one order (one to one)
+
+
+
+    * User can have many stocks (one option to many)
+
+
+
+    * An order can have many order items (one to many)
+
+
+
+    * A stock can have many order items (one to many)
+
+
+
+    * A card has  many stocks (one to many)
+
+  * Model discussion
+    * User
+    * Order
+    * OrderItem
+    * Stock
+    * Card
+
