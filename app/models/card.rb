@@ -1,5 +1,13 @@
 class Card < ApplicationRecord
 
+validates :title, presence: true
+validates :card_type, presence: true
+validates :color, presence: true
+validates :rarity, presence: true
+validates :converted_mana_cost, presence: true
+validates :set, presence: true
+validates :date, presence: true
+
 has_one_attached :face
 has_many :stocks, dependent: :destroy
   
