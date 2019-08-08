@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
   def index
+    if current_user.order.nil?
+      current_user.order = Order.new
+    end
     @items = current_user.order.order_items
     @order = current_user.order
     
@@ -27,7 +30,11 @@ class OrdersController < ApplicationController
 
   def complete
     order_item = OrderItem.find(params[:id])
-    if !order_item || !order_item.destroy || order_item.save
+    order_item.stock.quantity -= order_item.quantity
+    if order_item.stock.quantity == 0
+      order_item.stock.destroy
+    end
+    if !order_item || !order_item.destroy || order_item.save || order_item.stock.save
       flash[:alert] = "There was a problem removing your order"
     else
       flash[:notice] =  "Your order item is successfully paid, it is removed from cart now"
