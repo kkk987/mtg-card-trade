@@ -9,12 +9,15 @@ class Stock < ApplicationRecord
   validates :card_id, presence: true
   has_many :order_items, foreign_key: "stock_id", dependent: :destroy
 
+  # This method is used to create a new stock object
+  # It returns the created stock on success
+  # Otherwise, it returns false
   def self.create_stock(card_id, user_id, condition, price, quantity)
-    # card_id = Card.where("title = ?", title).first.id
-    # byebug
+    # check if card_id and user_id are not nill
     if card_id && user_id
       stock = Stock.new(card_id: card_id, seller_id: user_id, condition: condition, price: price, quantity: quantity)
     end
+    # save the stock object
     if stock.save
       return stock
     else
@@ -22,10 +25,16 @@ class Stock < ApplicationRecord
     end
   end
 
+
+  # Sort stocks in latest to earliest order
+  # And return the sorted order
   def self.sort_by_time(stock)
     return stock.order(:updated_at).reverse
   end
 
+  # Sort a seller's stock by time order
+  # It returns the sorted stock on success
+  # Otherwise, it returns false
   def self.sort_my_stock(user_id)
     if user_id
       stock = Stock.where("seller_id = ?", user_id)
@@ -36,6 +45,9 @@ class Stock < ApplicationRecord
     end
   end
 
+  # Update stock attributes
+  # It returns the stock on success
+  # If no stock is found, it returns false
   def self.update_my_stock(stock_id, title, condition, price, quantity)
     stock = Stock.find(stock_id)
     return false if !stock

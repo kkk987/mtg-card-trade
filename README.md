@@ -253,6 +253,8 @@ https://github.com/kkk987/mtg-card-trade.git
 
   * Testing
 
+
+
 # INFORMATION SECURITY AND USER DATA
   * Discuss and analyse information security and methods
     * Current information security issues:
