@@ -1,3 +1,5 @@
+<%# detailed information of a stock %>
+<%# this is rendered in stock aprt as create a new stock and edit an existing stock need to display the same information %>
 <%= form_with model: @stock, local: true do |f| %>
   <div class = "is-size-3 has-text-centered">
     <%= f.fields_for :card, @stock.card do |card_form| %>

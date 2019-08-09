@@ -1,10 +1,13 @@
 <section class = "section">
   <div class = "container">
+    <%# user can make an order here %>
     <h1 class = "title is-1 has_text-centered">Title: <%= @item.card.title %></h1>
     <h1 class = "title is-1 has_text-centered">Seller Name: <%= @item.seller.username.capitalize %></h1>
     <h1 class = "title is-1 has_text-centered">Condition: <%= @item.condition %></h1>
     <h1 class = "title is-1 has_text-centered">Quantity: <%= @item.quantity %></h1>
     <h1 class = "title is-1 has_text-centered">Price: <%= @item.price %></h1>
+    <%# max order number should not exceed stock quantity %>
+    <%# use existing order quantity if it exists %>
     <%= form_with model: @order_item, local:true do |f| %>
       <%= label(:quantity,"Qty")%>
       <%= f.number_field :quantity, max: @item.quantity, value: 1 %>

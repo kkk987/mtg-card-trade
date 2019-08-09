@@ -1,5 +1,6 @@
 <section class = "section">
   <div class = "container">
+    <%# ask users if they want to register as a seller by ticking the box %>
     <%= form_with model: @seller, url: trade_path do |form| %>
       <p class = "has-text-centered is-family-monospace is-size-3">
         <%= form.check_box :registered %>

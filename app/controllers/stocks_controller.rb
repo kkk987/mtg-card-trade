@@ -1,8 +1,11 @@
 class StocksController < ApplicationController
+  # show stock in sorted order
   def index
     @stock = Stock.sort_my_stock(current_user.id)
   end
 
+  # this part uses jquery to autocomplete card title
+  # for example, if user entered 'a', it will show a list of card titles that contains 'a'
   def new
     @stock = Stock.new
     respond_to do |format|
@@ -13,12 +16,13 @@ class StocksController < ApplicationController
     }
     end
   end
+
+  # create a new stock
+  # redirect to stock page when changes are saved
+  # otherwise, show error message
   def create
-    # title, user_id, condition, price, quantity
-    # info = params[:stock]
     card_id = Card.return_card_id(params[:stock][:card][:title])
     stock = Stock.create_stock(card_id, current_user.id, params[:stock][:condition], params[:stock][:price], params[:stock][:quantity])
-    # byebug
     if stock
       flash[:alert] = "Your changes have been saved"
       redirect_to stocks_path
@@ -28,10 +32,14 @@ class StocksController < ApplicationController
     end
   end
 
+  # show a particular stock
   def edit
     @stock = Stock.find(params[:id])
   end
 
+  # update a particular stock
+  # redirect to stock page when changes are saved successfully
+  # otherwise, show error message
   def update
     stock = Stock.update_my_stock(params[:id], params[:stock][:card][:title],params[:stock][:condition], params[:stock][:price], params[:stock][:quantity])
 
@@ -43,6 +51,9 @@ class StocksController < ApplicationController
     redirect_to stocks_path
   end
 
+  # destroy a stock record
+  # redirect to stock page when changes are saved successfully
+  # otherwise, show error message
   def destroy
     
     stock = Stock.find(params[:id])

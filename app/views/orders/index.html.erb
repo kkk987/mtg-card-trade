@@ -3,6 +3,7 @@
     <h1 class = "title is-1">Cart</h1>
     <div class="tile is-ancestor">
       <div class="tile is-6 is-vertical is-parent">
+      <%# display all order items in cart with corresponding information %>
           <% @items&.each do |item| %>
               <div class="tile is-child box">
                 <p>Title: <%= item.stock.card.title %></p>
@@ -16,12 +17,15 @@
                   <div class = "buttons are-normal">
                     <div class = "columns is-vcentered">
                       <div class="column">
+                      <%# update button %>
                         <%= f.submit "Update", class: "button is-rounded" %>
                       </div>
                       <div class="column">
+                      <%# destroy button %>
                         <button class = "button is-rounded"><%= link_to "Delete", item, method: "delete", data: {confirm: "Are you sure?"} %></button>
                       </div>
                       <div class="column">
+                      <%# checkout button %>
                         <button class = "button is-rounded"><%= link_to "Checkout", new_order_path(id: item.id) %></button>
                       </div>
                     </div>
