@@ -12,9 +12,18 @@ https://mtg-card-trades.herokuapp.com/
 https://github.com/kkk987/mtg-card-trade.git
 
 # KNOW ISSUES:
-
+  - Current validation is conflicting with order page
+  - Layouts of some pages are not centered
+  - More testings for each controller and model
+  
 # FUTURE FEATURES:
-
+  - Show market link in card library
+  - Show all stocks in market page
+  - Checkout multiple items at once
+  - More restrict seller registration
+  - Insert card image for each card
+  - Search engine for proper card search
+  
 # App description:
   * Purpose:
 
@@ -226,12 +235,12 @@ https://github.com/kkk987/mtg-card-trade.git
   * User Stories
 
     * US-1: User can login/out.
-    * US-2: User can view all cards that match a title
-    * US-3: User can view all cards available for sale
+    * US-2: User can view all stocks of a particular card
+    * US-3: User can view their stock
     * US-4: User can view all cards in the database
     and view the detail of a card
     * US-5: User can manage their stock
-    * US-6: User can manage their cart
+    * US-6: User can manage their cart and checkout
 
   * Wireframe
   
@@ -262,11 +271,11 @@ https://github.com/kkk987/mtg-card-trade.git
 
   * Planning and Tracking
   
-    This project is planned and tracked through trello board. Team members need to explain to the rest of the team what they did yesterday or last week and update the corresponding tasks on trello. If there are any issues, we use slack to communicate with others. The detailed meeting records can be found in documents/meeting_record.pdf. 
+    This project is planned and tracked through trello board. Team members need to explain to the rest of the team what they did yesterday or last week and update the corresponding tasks on trello. If there are any issues, we use slack to communicate with others. The detailed meeting records can be found in docs/resources/meeting_record.pdf. 
 
   * Agile methodology implementation
 
-    This project uses trello board and slack as communication methods. The benifits of using trello board are that develpers can visulise what needs to be down. And slack is easy to share code and documents. The detail use of trello board please refer to documents/meeting_record.pdf
+    This project uses trello board and slack as communication methods. The benifits of using trello board are that develpers can visulise what needs to be down. And slack is easy to share code and documents. The detail use of trello board please refer to docs/resources/meeting_record.pdf
   
   * Source control process
   
@@ -275,6 +284,9 @@ https://github.com/kkk987/mtg-card-trade.git
     ![image](https://user-images.githubusercontent.com/8579501/62620196-fda32200-b95b-11e9-9e5a-90065c4053bf.png)
 
   * Testing
+    Please find more informtaion in docs/resources/TestCase.xlsx file.
+
+    ![image](https://user-images.githubusercontent.com/8579501/62817670-d2981880-bb7d-11e9-90f0-0e19ea52948b.png)
 
 
 
