@@ -235,7 +235,30 @@ https://github.com/kkk987/mtg-card-trade.git
 
   * Wireframe
   
-    * 
+    * Homepage
+      ![IMG_3433](https://user-images.githubusercontent.com/8579501/62816904-96f75180-bb71-11e9-89a0-b5aa4fcf18fe.jpg)
+      ![IMG_3434](https://user-images.githubusercontent.com/8579501/62816905-96f75180-bb71-11e9-9e5e-eadd7b1f0687.jpg)
+      ![IMG_3435](https://user-images.githubusercontent.com/8579501/62816907-96f75180-bb71-11e9-8c0e-65719737b3fe.jpg)
+    * Register as a seller
+      ![IMG_3436](https://user-images.githubusercontent.com/8579501/62816908-978fe800-bb71-11e9-96b4-9f73e9fd02fc.jpg)
+      ![IMG_3437](https://user-images.githubusercontent.com/8579501/62816909-978fe800-bb71-11e9-8cfd-97ebd41be479.jpg)
+      ![IMG_3438](https://user-images.githubusercontent.com/8579501/62816910-978fe800-bb71-11e9-893e-96dee5156fc7.jpg)
+    * Stock
+      ![IMG_3439](https://user-images.githubusercontent.com/8579501/62816911-978fe800-bb71-11e9-926d-791bf42475db.jpg)
+      ![IMG_3440](https://user-images.githubusercontent.com/8579501/62816912-98287e80-bb71-11e9-9759-a750a70b586e.jpg)
+      ![IMG_3441](https://user-images.githubusercontent.com/8579501/62816913-98287e80-bb71-11e9-812b-1edfc5cb39d2.jpg)
+    * Card
+      ![IMG_3442](https://user-images.githubusercontent.com/8579501/62816914-98287e80-bb71-11e9-989a-023b79d8ae98.jpg)
+      ![IMG_3443](https://user-images.githubusercontent.com/8579501/62816915-9959ab80-bb71-11e9-8bca-abbe2c8012a5.jpg)
+      ![IMG_3444](https://user-images.githubusercontent.com/8579501/62816916-9959ab80-bb71-11e9-8bc1-f16da934cba8.jpg)
+    * Cart
+      ![IMG_3445](https://user-images.githubusercontent.com/8579501/62816917-99f24200-bb71-11e9-9236-2d68eadc6980.jpg)
+      ![IMG_3446](https://user-images.githubusercontent.com/8579501/62816918-99f24200-bb71-11e9-94e5-7c265b4d65ad.jpg)
+      ![IMG_3447](https://user-images.githubusercontent.com/8579501/62816919-9a8ad880-bb71-11e9-999f-87ae4533bfd7.jpg)
+    * Market
+      ![IMG_3448](https://user-images.githubusercontent.com/8579501/62816920-9a8ad880-bb71-11e9-8ace-3927fdccae42.jpg)
+      ![IMG_3449](https://user-images.githubusercontent.com/8579501/62816921-9b236f00-bb71-11e9-92d0-e7d32d990aa7.jpg)
+      ![IMG_3450](https://user-images.githubusercontent.com/8579501/62816922-9b236f00-bb71-11e9-901c-492e3dfcaa90.jpg)
 
   * Planning and Tracking
   
